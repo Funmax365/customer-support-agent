@@ -1,0 +1,29 @@
+customer-support-project/
+│
+├── index.html               
+├── dashboard.html          
+├── tickets.html              
+├── history.html              
+├── faq.html                  
+├── profile.html               
+│
+├── css/
+│   ├── global.css            
+│   ├── chat.css               
+│   ├── dashboard.css        
+│   ├── tickets.css            
+│   ├── history.css           
+│   ├── faq.css                
+│   └── profile.css           
+│
+├── js/
+│   ├── store.js               
+│   ├── chat.js                
+│   ├── dashboard.js           
+│   ├── tickets.js             
+│   ├── history.js             
+│   ├── faq.js                 
+│   └── profile.js             
+│
+└── assets/
+    └── icons/                 
