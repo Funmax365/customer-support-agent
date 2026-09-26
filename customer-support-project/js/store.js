@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sidebarOverlay.addEventListener('click', toggleSidebar);
     }
     
-    // --- New Profile Dropdown Logic ---
+    // --- Profile Dropdown Logic ---
     const profileToggleBtn = document.getElementById('profile-toggle-btn');
     const profileDropdown = document.getElementById('profile-dropdown');
 

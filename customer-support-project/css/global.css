@@ -61,6 +61,26 @@ button { font-family: inherit; cursor: pointer; border: none; }
     align-items: center;
     gap: 16px;
 }
+/* Add to global.css */
+.btn-secondary {
+    background-color: #F3F4F6;
+    color: var(--text-dark);
+    border: 1px solid #E5E7EB;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+}
+
+.btn-secondary:hover {
+    background-color: #E5E7EB;
+    border-color: #D1D5DB;
+}
 
 .menu-btn {
     background-color: var(--primary-blue);

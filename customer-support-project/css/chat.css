@@ -209,4 +209,12 @@
     .send-btn-text {
         display: none;
     }
+    .header-actions {
+        flex-direction: column;
+        gap: 6px !important;
+    }
+    .btn-secondary {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
 }
