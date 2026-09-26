@@ -74,6 +74,119 @@ button { font-family: inherit; cursor: pointer; border: none; }
     flex-shrink: 0;
 }
 
+/* Sidebar Overlay (Dark Scrim) */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(17, 24, 39, 0.4); /* Dark semi-transparent */
+    z-index: 99;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Sidebar Container */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -320px; /* Hidden off-screen by default */
+    width: 280px;
+    height: 100vh;
+    background-color: var(--bg-panel);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.1);
+    transition: left 0.3s ease;
+}
+
+/* Open State Triggered via JS */
+body.sidebar-open .sidebar {
+    left: 0;
+}
+body.sidebar-open .sidebar-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+}
+
+.sidebar-header h2 {
+    font-size: 20px;
+}
+
+.close-btn {
+    background: transparent;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.close-btn:hover {
+    color: var(--text-dark);
+}
+
+/* Navigation Links */
+.sidebar-nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px;
+    gap: 8px;
+    overflow-y: auto;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-item svg {
+    color: var(--text-muted);
+    transition: color 0.2s;
+}
+
+/* Active State & Hover */
+.nav-item:hover {
+    background-color: var(--secondary-blue);
+}
+
+.nav-item.active {
+    background-color: var(--primary-blue);
+    color: #FFFFFF;
+}
+
+.nav-item.active svg {
+    color: #FFFFFF;
+}
+
+/* Sidebar Footer */
+.sidebar-footer {
+    padding: 24px 16px;
+    border-top: 1px solid #E5E7EB;
+}
+
+.logout {
+    color: var(--text-dark);
+}
+
 .page-title {
     font-size: 20px;
     font-weight: 600;
@@ -89,6 +202,64 @@ button { font-family: inherit; cursor: pointer; border: none; }
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
+}
+
+/* Profile Dropdown Container */
+.profile-dropdown {
+    position: absolute;
+    top: 48px; /* Position directly below the avatar */
+    right: 0;
+    width: 260px;
+    background-color: var(--bg-panel);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.05);
+    padding: 20px;
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    gap: 12px;
+    z-index: 50;
+    border: 1px solid #E5E7EB;
+}
+
+/* Active Class for JS Toggle */
+.profile-dropdown.active {
+    display: flex;
+}
+
+.profile-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+}
+
+.profile-info-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.info-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.info-value {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.mono-text {
+    font-family: 'Fira Code', Consolas, monospace;
+}
+
+/* Edit Profile Button */
+.edit-profile-btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: 8px;
+    text-decoration: none; /* Remove underline from anchor tag */
 }
 
 /* Responsive Adjustments */
