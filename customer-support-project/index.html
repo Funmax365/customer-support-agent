@@ -9,6 +9,52 @@
     <link rel="stylesheet" href="css/chat.css">
     <link rel="shortcut icon" href="./assets/icons/logo (2).png" type="image/x-icon">
 </head>
+<!-- Ticket Creation Modal box -->
+    <div class="modal-overlay" id="ticket-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create Support Ticket</h2>
+                <button class="close-btn" id="close-modal-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+            </div>
+            <div id="ticket-success-msg" style="display:none; background:#10B981; color:white; padding:12px; border-radius:6px; margin-bottom:16px;"></div>
+            <form id="ticket-form">
+                <div class="form-group">
+                    <label>Subject</label>
+                    <input type="text" id="t-subject" placeholder="Brief summary of the issue">
+                    <span class="error-msg">Please enter a subject.</span>
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <select id="t-category">
+                        <option value="">Select a category...</option>
+                        <option value="Order Issue">Order Issue</option>
+                        <option value="Payment">Payment</option>
+                        <option value="Delivery">Delivery</option>
+                        <option value="Refund">Refund</option>
+                        <option value="Technical Support">Technical Support</option>
+                    </select>
+                    <span class="error-msg">Please select a category.</span>
+                </div>
+                <div class="form-group">
+                    <label>Priority</label>
+                    <select id="t-priority">
+                        <option value="">Select priority...</option>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                        <option value="Urgent">Urgent</option>
+                    </select>
+                    <span class="error-msg">Please select a priority.</span>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="t-desc" rows="4" placeholder="Provide details here..."></textarea>
+                    <span class="error-msg">Please complete all required fields.</span>
+                </div>
+                <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">Submit Ticket</button>
+            </form>
+        </div>
+    </div>
 <body>
     <!-- Sidebar Overlay -->
     <div class="sidebar-overlay" id="sidebar-overlay"></div>

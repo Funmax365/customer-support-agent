@@ -1,4 +1,63 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Ticket Modal Logic ---
+    const createTicketBtn = document.querySelector('.create-ticket-btn');
+    const ticketModal = document.getElementById('ticket-modal');
+    const closeBtn = document.getElementById('close-modal-btn');
+    const ticketForm = document.getElementById('ticket-form');
+
+    if (createTicketBtn) createTicketBtn.addEventListener('click', () => ticketModal.classList.add('active'));
+    if (closeBtn) closeBtn.addEventListener('click', () => ticketModal.classList.remove('active'));
+    if (ticketModal) {
+        ticketModal.addEventListener('click', (e) => {
+            // Ensure the click happened directly on the overlay, not on the modal content
+            if (e.target === ticketModal) {
+                ticketModal.classList.remove('active');
+            }
+        });
+    }
+
+    ticketForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let isValid = true;
+        ['t-subject', 't-category', 't-priority', 't-desc'].forEach(id => {
+            const el = document.getElementById(id);
+            if (!el.value.trim()) {
+                el.parentElement.classList.add('has-error');
+                isValid = false;
+            } else {
+                el.parentElement.classList.remove('has-error');
+            }
+        });
+
+        if (isValid) {
+            const ticketId = `TKT-${new Date().getFullYear()}-${Math.floor(Math.random() * 90000 + 10000)}`;
+            const newTicket = {
+                id: ticketId,
+                subject: document.getElementById('t-subject').value,
+                category: document.getElementById('t-category').value,
+                priority: document.getElementById('t-priority').value,
+                description: document.getElementById('t-desc').value,
+                status: 'Open',
+                dateCreated: new Date().toLocaleDateString(),
+                lastUpdated: new Date().toLocaleDateString(),
+                linkedConvId: currentConversation ? currentConversation.id : null // Link to chat
+            };
+
+            let tickets = JSON.parse(localStorage.getItem('supportTickets')) || [];
+            tickets.unshift(newTicket);
+            localStorage.setItem('supportTickets', JSON.stringify(tickets));
+
+            const successMsg = document.getElementById('ticket-success-msg');
+            successMsg.style.display = 'block';
+            successMsg.innerHTML = `Ticket Created Successfully!<br><b>ID:</b> ${newTicket.id}<br><b>Status:</b> Open`;
+            ticketForm.reset();
+            
+            setTimeout(() => {
+                ticketModal.classList.remove('active');
+                successMsg.style.display = 'none';
+            }, 3000);
+        }
+    });
     const chatMessagesContainer = document.getElementById('chat-messages');
     const chatInput = document.getElementById('chat-input');
     const sendBtn = document.getElementById('send-btn');
@@ -29,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             keywords: [0, 1, 2, 3, 4, 5, 6, "ticket", 7, 8, 9],
             tag: "Ticket Support",
-            response: "You can create a support ticket for an order <a href='tickets.html' style='color:var(--primary-blue); text-decoration:underline;'>here</a>"
+            response: "You can create a support ticket for an order by clicking on the 'Create Support Ticket' button at the top of this chat panel."
         },
         {
             keywords: ["refund", "return", "money"],

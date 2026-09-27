@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Platform - My Tickets</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/tickets.css">
+    <link rel="stylesheet" href="css/chat.css"> <!-- This is for the in-ticket chat -->
+    <link rel="shortcut icon" href="./assets/icons/logo (2).png" type="image/x-icon">
+</head>
+<body>
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Side Navigation Menu -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>SupportPlatform</h2>
+            <button class="close-btn" id="close-sidebar-btn" aria-label="Close Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                Live Chat
+            </a>
+            <a href="dashboard.html" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                Dashboard
+            </a>
+            <a href="tickets.html" class="nav-item active">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                My Tickets
+            </a>
+            <a href="history.html" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"></path><path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5"></path></svg>
+                Conversation History
+            </a>
+            <a href="faq.html" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                FAQ
+            </a>
+            <a href="profile.html" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                Profile
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="#" class="nav-item logout">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                Logout
+            </a>
+        </div>
+    </aside>
+    <!-- Top Global Navigation -->
+    <header class="top-nav">
+        <div class="nav-left">
+            <button class="menu-btn" aria-label="Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+            <h1 class="page-title">Support Platform - My Tickets</h1>
+        </div>
+        <div class="nav-right" style="position: relative;">
+            <button class="profile-btn" id="profile-toggle-btn" aria-label="Profile">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+            </button>
+            
+            <!-- Profile Dropdown -->
+            <div class="profile-dropdown" id="profile-dropdown">
+                <span class="info-label">Name:</span><h3 class="profile-name">Jane Doe</h3>
+                
+                <div class="profile-info-group">
+                    <span class="info-label">Phone:</span>
+                    <span class="info-value">+1 (555) 123-4567</span>
+                </div>
+                
+                <div class="profile-info-group">
+                    <span class="info-label">Email:</span>
+                    <span class="info-value">jane.doe@example.com</span>
+                </div>
+                
+                <div class="profile-info-group">
+                    <span class="info-label">Customer ID:</span>
+                    <span class="info-value mono-text">CUST-90210</span>
+                </div>
+                
+                <a href="profile.html" class="btn-primary edit-profile-btn">
+                    Edit Profile 
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="tickets-layout">
+        
+        <!-- List View -->
+        <div class="tickets-container" id="tickets-list-view">
+            <div class="t-header">
+                <h2>My Tickets</h2>
+                <button class="btn-primary create-ticket-btn">Create Support Ticket</button>
+            </div>
+            
+            <!-- Filters -->
+            <div class="filters-bar">
+                <input type="text" id="search-ticket" placeholder="Search by ID or Subject...">
+                <select id="filter-status">
+                    <option value="All">All Statuses</option>
+                    <option value="Open">Open</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Resolved">Resolved</option>
+                    <option value="Closed">Closed</option>
+                </select>
+                <select id="filter-priority">
+                    <option value="All">All Priorities</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                    <option value="Urgent">Urgent</option>
+                </select>
+            </div>
+
+            <div class="tickets-list" id="tickets-list">
+                <!-- Dynamically populated via JS -->
+            </div>
+        </div>
+
+        <!-- Detail View (Hidden by default) -->
+        <div class="ticket-detail-view" id="ticket-detail-view" style="display: none;">
+            <div class="t-header">
+                <button class="btn-secondary" id="back-to-tickets">← Back to Tickets</button>
+                <div id="detail-badges"></div>
+            </div>
+            <div class="detail-content">
+                <h2 id="detail-subject"></h2>
+                <p class="mono-text" style="color:var(--text-muted); margin-bottom:16px;" id="detail-id"></p>
+                <div class="detail-box">
+                    <h3>Original Description</h3>
+                    <p id="detail-desc"></p>
+                </div>
+                
+                <!-- In-Ticket Conversation -->
+                <div class="detail-box" id="linked-chat-box" style="display: none; padding:0; overflow:hidden; display:flex; flex-direction:column; height: 400px;">
+                    <div class="chat-messages" id="ticket-chat-messages" style="flex:1;"></div>
+                    <div class="chat-input-area" style="border-top: 1px solid #E5E7EB;">
+                        <input type="text" id="ticket-chat-input" placeholder="Continue the conversation...">
+                        <button class="btn-primary" id="ticket-send-btn">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Ticket Creation Modal -->
+    <div class="modal-overlay" id="ticket-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create Support Ticket</h2>
+                <button class="close-btn" id="close-modal-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+            </div>
+            <div id="ticket-success-msg" style="display:none; background:#10B981; color:white; padding:12px; border-radius:6px; margin-bottom:16px;"></div>
+            <form id="ticket-form">
+                <div class="form-group">
+                    <label>Subject</label>
+                    <input type="text" id="t-subject" placeholder="Brief summary of the issue">
+                    <span class="error-msg">Please enter a subject.</span>
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <select id="t-category">
+                        <option value="">Select a category...</option>
+                        <option value="Order Issue">Order Issue</option>
+                        <option value="Payment">Payment</option>
+                        <option value="Delivery">Delivery</option>
+                        <option value="Refund">Refund</option>
+                        <option value="Technical Support">Technical Support</option>
+                    </select>
+                    <span class="error-msg">Please select a category.</span>
+                </div>
+                <div class="form-group">
+                    <label>Priority</label>
+                    <select id="t-priority">
+                        <option value="">Select priority...</option>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                        <option value="Urgent">Urgent</option>
+                    </select>
+                    <span class="error-msg">Please select a priority.</span>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="t-desc" rows="4" placeholder="Provide details here..."></textarea>
+                    <span class="error-msg">Please complete all required fields.</span>
+                </div>
+                <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">Submit Ticket</button>
+            </form>
+        </div>
+    </div>
+    <script src="js/store.js"></script>
+    <script src="js/tickets.js"></script>
+</body>
+</html>
