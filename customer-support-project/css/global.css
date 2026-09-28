@@ -77,10 +77,16 @@ body {
     font-family: var(--font-primary);
     background-color: var(--bg-page);
     color: var(--text-dark);
-    height: 100vh;
+    height: 100dvh;
+    min-height: 100vh;
     overflow: hidden; 
     display: flex;
     flex-direction: column;
+}
+/* ensuring smooth touch scrolling inside layout containers */
+main{
+    --webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
 }
 
 /* Global Typography */
