@@ -257,10 +257,15 @@ body.sidebar-open .sidebar-overlay {
 .sidebar-footer {
     padding: 24px 16px;
     border-top: 1px solid #E5E7EB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.logout {
-    color: var(--text-dark);
+.version-text {
+    color: var(--text-muted);
+    font-size: 13px;
+    font-weight: 500;
 }
 
 .page-title {

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Platform - Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="shortcut icon" href="./assets/icons/logo (2).png" type="image/x-icon">
+</head>
+<body>
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Side Navigation Menu -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Support Platform</h2>
+            <button class="close-btn" id="close-sidebar-btn" aria-label="Close Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                Live Chat
+            </a>
+            <a href="dashboard.html" class="nav-item active">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                Dashboard
+            </a>
+            <a href="tickets.html" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                My Tickets
+            </a>
+            <a href="history.html" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"></path><path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5"></path></svg>
+                Conversation History
+            </a>
+            <a href="faq.html" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                FAQ
+            </a>
+            <a href="profile.html" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                Profile
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <span class="version-text">Version 1.0.1</span>
+        </div>
+    </aside>
+
+    <!-- Top Global Navigation -->
+    <header class="top-nav">
+        <div class="nav-left">
+            <button class="menu-btn" aria-label="Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+            <h1 class="page-title">Support Platform - Dashboard</h1>
+        </div>
+        <div class="nav-right" style="position: relative;">
+            <button class="profile-btn" id="profile-toggle-btn" aria-label="Profile">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+            </button>
+            
+            <!-- Profile Dropdown -->
+            <div class="profile-dropdown" id="profile-dropdown">
+                <span class="info-label">Name:</span><h3 class="profile-name"></h3>
+                <div class="profile-info-group">
+                    <span class="info-label">Phone:</span>
+                    <span class="info-value"></span>
+                </div>
+                <div class="profile-info-group">
+                    <span class="info-label">Email:</span>
+                    <span class="info-value"></span>
+                </div>
+                <div class="profile-info-group">
+                    <span class="info-label">Customer ID:</span>
+                    <span class="info-value mono-text"></span>
+                </div>
+                <a href="profile.html" class="btn-primary edit-profile-btn">
+                    Edit Profile 
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-layout">
+        <div class="dashboard-container">
+            <h2 class="welcome-text">Welcome back, <span id="dash-user-name">Customer</span>!</h2>
+            
+            <!-- Statistics Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Open Tickets</h3>
+                    <div class="stat-number" id="stat-open-tickets">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Resolved Tickets</h3>
+                    <div class="stat-number" id="stat-resolved-tickets">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Active Conversations</h3>
+                    <div class="stat-number" id="stat-conversations">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Unread Messages</h3>
+                    <div class="stat-number" id="stat-unread">0</div>
+                </div>
+            </div>
+
+            <!-- Lower Section -->
+            <div class="dashboard-sections">
+                <!-- Recent Tickets -->
+                <div class="dash-section tickets-section">
+                    <div class="section-header">
+                        <h3>Recent Tickets</h3>
+                        <a href="tickets.html" class="view-all-link">View All</a>
+                    </div>
+                    <div id="recent-tickets-list" class="recent-list">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Quick Actions & Chat -->
+                <div class="dash-section actions-section">
+                    <div class="section-header">
+                        <h3>Quick Actions</h3>
+                    </div>
+                    <div class="quick-actions-grid">
+                        <a href="index.html" class="btn-primary" style="justify-content: center; text-decoration: none;">Start Live Chat</a>
+                        <a href="tickets.html" class="btn-secondary" style="justify-content: center; text-decoration: none">View My Tickets</a>
+                    </div>
+
+                    <div class="section-header" style="margin-top: 24px;">
+                        <h3>Latest Chat Activity</h3>
+                    </div>
+                    <div id="recent-chat-card" class="recent-chat-card">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/store.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
